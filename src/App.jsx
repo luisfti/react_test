@@ -1,5 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Form from "./components/Form";
 
 const filmes = ["teste1", "teste2", "teste3"];
 
@@ -48,15 +50,24 @@ const produtos = [
 ];
 
 function handleClick(e) {
-  console.log(e.target.value)
+  console.log(e.target.value);
 }
+
+const Teste = () => {
+  const active = true;
+  if (active) {
+    return <p>CONST</p>;
+  } else {
+    return null;
+  }
+};
 
 const App = () => {
   // const dados = produtos;
   // const total = dados.compras.map((item) => Number(item.preco.replace("R$", ""))).reduce((a, b) => a + b);
 
   return (
-    <div>
+    <>
       {/* <p>Nome: {dados.cliente}</p>
       <p>Idade: {dados.idade}</p>
       <p>
@@ -90,11 +101,11 @@ const App = () => {
           </div>
         ))}
         <button onClick={handleClick} value={10}>Clique</button> */}
-
-        <Header/>
-    </div>
-
-    
+      <Header />
+      <Teste />
+      <Form />
+      <Footer />
+    </>
   );
 };
 
